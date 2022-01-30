@@ -1,0 +1,6 @@
+name: MyJoinLeaveMessage
+version: '${project.version}'
+main: tech7.myjlmessage.my_joinleave_message.MyJoinLeaveMessage
+api-version: 1.18
+authors: [ Tech7 ]
+description: A custom chat join and leave message plugin
