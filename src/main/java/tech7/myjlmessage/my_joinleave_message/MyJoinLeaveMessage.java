@@ -2,16 +2,13 @@ package tech7.myjlmessage.my_joinleave_message;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.event.Listener;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
 import java.io.IOException;
-
-import static org.bukkit.Bukkit.reload;
 
 public final class MyJoinLeaveMessage extends JavaPlugin {
 
@@ -23,15 +20,11 @@ public final class MyJoinLeaveMessage extends JavaPlugin {
         this.data = new Language(this);
         this.saveDefaultConfig();
         FileConfiguration config = this.getConfig();
-        config.addDefault("Mensagem de boas-vindas", true);
+        config.addDefault("default-language", "en");
         config.options().copyDefaults(true);
         this.saveConfig();
         Bukkit.getConsoleSender().sendMessage("[" + ChatColor.YELLOW + "MyJoin/LeaveMessage" + ChatColor.WHITE + "]" + ChatColor.GREEN + " Successful enabled");
-        if (config.getBoolean("Mensagem de boas-vindas")){
-            Bukkit.getPluginManager().registerEvents(new PlayerJoin(), this);
-        }else {
-            Bukkit.getConsoleSender().sendMessage("Disabled messages");
-        }
+        Bukkit.getPluginManager().registerEvents(new PlayerJoin(), this);
     }
 
     @Override

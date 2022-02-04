@@ -21,10 +21,10 @@ public class Language {
 
     public void reloadlang(){
         if(this.langfile == null) {
-            this.langfile = new File(this.plugin.getDataFolder(), "lang.yml");
+            this.langfile = new File(this.plugin.getDataFolder(), "locales/custom.yml");
         }
         this.lang = YamlConfiguration.loadConfiguration(this.langfile);
-        InputStream defaultStream = this.plugin.getResource("lang.yml");
+        InputStream defaultStream = this.plugin.getResource("custom.yml");
         if(defaultStream != null){
             YamlConfiguration defaultconfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defaultStream));
             this.lang.setDefaults(defaultconfig);
@@ -46,9 +46,9 @@ public class Language {
     }
     public void saveDefaultConfig(){
         if (this.langfile == null)
-            this.langfile = new File(this.plugin.getDataFolder(), "lang.yml");
+            this.langfile = new File(this.plugin.getDataFolder(), "locales/custom.yml");
         if (!this.langfile.exists()){
-            this.plugin.saveResource("lang.yml", false);
+            this.plugin.saveResource("locales/custom.yml", false);
         }
     }
 }
