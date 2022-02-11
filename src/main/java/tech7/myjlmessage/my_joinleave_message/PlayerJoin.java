@@ -18,14 +18,20 @@ public class PlayerJoin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         YamlConfiguration custom = YamlConfiguration.loadConfiguration(new File("plugins/MyJoinLeaveMessage/locales/custom.yml"));
         Player player = event.getPlayer();
-        event.setJoinMessage(player.getDisplayName() + ChatColor.DARK_RED + " " + custom.get("Enter"));
+        String enter_msg = (String) custom.get("Enter");
+        assert enter_msg != null;
+        enter_msg = enter_msg.replaceAll("%player%", player.getName()).replaceAll("&","§");
+        event.setJoinMessage(enter_msg);
 
     }
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event){
         YamlConfiguration custom = YamlConfiguration.loadConfiguration(new File("plugins/MyJoinLeaveMessage/locales/custom.yml"));
         Player player = event.getPlayer();
-        event.setQuitMessage(player.getDisplayName() + ChatColor.DARK_RED + " " + custom.get("Leave"));
+        String enter_msg = (String) custom.get("Leave");
+        assert enter_msg != null;
+        enter_msg = enter_msg.replaceAll("%player%", player.getName()).replaceAll("&","§");
+        event.setQuitMessage(enter_msg);
 
     }
 }

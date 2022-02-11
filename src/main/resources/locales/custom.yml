@@ -1,2 +1,19 @@
-Enter: entered
-Leave: exited
+#============================================================#
+# You can use %player% to appear the player name on chat     #
+# Also you can use color codes like &a = Light Green         #
+#     BLACK = &0          |   DARK GRAY = &8                 #
+#     DARK BLUE = &1      |   LIGHT BLUE = &9                #
+#     DARK GREEN = &2     |   LIGHT GREEN = &a               #
+#     DARK TURQUOISE = &3 |   LIGHT TURQUOISE = &b           #
+#     DARK RED = &4       |   LIGHT RED = &c                 #
+#     PURPLE = &5         |   MAGENTA = &d                   #
+#     DARK YELLOW = &6    |   LIGHT YELLOW = &e              #
+#     LIGHT GRAY = &7     |   WHITE = &f                     #
+#__________________________OTHERS____________________________#
+#     MAGIC = &k          |   UNDERLINE = &n                 #
+#     BOLD = &l           |   ITALIC = &o                    #
+#     STRIKE = &m         |   RESET = &r                     #
+#============================================================#
+
+Enter: "%player% entered"
+Leave: "%player% exited"
