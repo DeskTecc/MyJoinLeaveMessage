@@ -4,3 +4,11 @@ main: tech7.myjlmessage.my_joinleave_message.MyJoinLeaveMessage
 api-version: 1.18
 authors: [ Tech7 ]
 description: A custom chat join and leave message plugin
+commands:
+  my:
+    description: help command for MyJoinLeaveMessage plugin
+    usage: /my
+ # myjoin:
+ #   description: command to change your join message
+ #   usage: /myjoin
+ #   permission: myjlmessage.myjoin
