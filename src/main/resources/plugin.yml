@@ -8,7 +8,7 @@ commands:
   my:
     description: help command for MyJoinLeaveMessage plugin
     usage: /my
- # myjoin:
- #   description: command to change your join message
- #   usage: /myjoin
- #   permission: myjlmessage.myjoin
+  myjoin:
+    description: command to change your join message
+    usage: /myjoin
+    permission: myjlmessage.myjoin

@@ -18,12 +18,8 @@ import java.util.UUID;
 
 public class PlayerJoin implements Listener {
 
-    private MyJoinLeaveMessage plugin;
-    private FileConfiguration save = null;
-    private File savefile = null;
-
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) throws IOException, InvalidConfigurationException {
+    public void onPlayerJoin(PlayerJoinEvent event) throws IOException {
         YamlConfiguration custom = YamlConfiguration.loadConfiguration(new File("plugins/MyJoinLeaveMessage/custom.yml"));
         FileConfiguration save_data = new YamlConfiguration();
         try {
@@ -45,7 +41,7 @@ public class PlayerJoin implements Listener {
                 String enter_msg_dataj = (String) save_data.get(player.getDisplayName()+".join");
                 assert enter_msg_dataj != null;
                 enter_msg_dataj = enter_msg_dataj.replaceAll("%player%", player.getName()).replaceAll("&","§");
-                event.setJoinMessage(save_data.getString(player.getDisplayName()+".join"));
+                event.setJoinMessage(enter_msg_dataj);
 
             }
         }else {
@@ -82,7 +78,7 @@ public class PlayerJoin implements Listener {
                 String enter_msg_datal = (String) save_data.get(player.getDisplayName()+".leave");
                 assert enter_msg_datal != null;
                 enter_msg_datal = enter_msg_datal.replaceAll("%player%", player.getName()).replaceAll("&","§");
-                event.setQuitMessage(save_data.getString(player.getDisplayName()+".leave"));
+                event.setQuitMessage(enter_msg_datal);
             }
         }
         event.setQuitMessage(quit_msg);
