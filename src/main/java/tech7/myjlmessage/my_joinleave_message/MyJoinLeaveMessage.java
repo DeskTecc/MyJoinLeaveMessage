@@ -15,10 +15,13 @@ public final class MyJoinLeaveMessage extends JavaPlugin {
         // Plugin startup logic
         this.data = new Custom(this);
         this.save_data = new Save_DATA(this);
-        Objects.requireNonNull(this.getCommand("my")).setExecutor(new Commands());
+        int pluginId = 14357;
+        Metrics metrics = new Metrics(this, pluginId);
+        Objects.requireNonNull(this.getCommand("myjl")).setExecutor(new Commands());
         Bukkit.getConsoleSender().sendMessage("[" + ChatColor.YELLOW + "MyJoin/LeaveMessage" + ChatColor.WHITE + "]" + ChatColor.GREEN + " Successful enabled");
         Bukkit.getPluginManager().registerEvents(new PlayerJoin(), this);
-        Objects.requireNonNull(this.getCommand("myjoin")).setExecutor(new Command_save());
+        Objects.requireNonNull(this.getCommand("myjoin")).setExecutor(new Command_Enter());
+        Objects.requireNonNull(this.getCommand("myleave")).setExecutor(new Command_Leave());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package tech7.myjlmessage.my_joinleave_message;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,7 +15,7 @@ public class Commands implements CommandExecutor, Listener {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player){
             Player player = (Player) sender;
-            player.sendMessage("/myjoin - custom your join message\n/myleave - custom your leave message");
+            player.sendMessage(ChatColor.GOLD + "====================================================\n"+ ChatColor.DARK_GREEN +"/myjoin - custom your join message\n/myleave - custom your leave message"+ChatColor.GOLD + "\n===================================================="+ ChatColor.RESET);
         }
         return true;
     }

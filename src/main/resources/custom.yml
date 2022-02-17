@@ -17,3 +17,6 @@
 
 Enter: "%player% entered"
 Leave: "%player% exited"
+#these messages will appear when you use /myjoin or /myleave like: Your join message: new join message
+Your-Join-Message: "Your join message"
+Your-Leave-Message: "Your leave message"

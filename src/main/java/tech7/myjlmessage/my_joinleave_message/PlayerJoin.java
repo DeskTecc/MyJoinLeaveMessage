@@ -33,11 +33,10 @@ public class PlayerJoin implements Listener {
         enter_msg = enter_msg.replaceAll("%player%", player.getName()).replaceAll("&","§");
         String pname = save_data.getString(player.getDisplayName()+".player-name");
         if (Objects.equals(pname, player.getDisplayName())){
-            if(save_data.get(player.getDisplayName()+".join") == "default"){
-                System.out.println("é default");
+            String join_m = (String) save_data.get(player.getDisplayName()+".join");
+            if(Objects.equals(join_m, "default")){
                 event.setJoinMessage(enter_msg);
             } else{
-                System.out.println("não é default");
                 String enter_msg_dataj = (String) save_data.get(player.getDisplayName()+".join");
                 assert enter_msg_dataj != null;
                 enter_msg_dataj = enter_msg_dataj.replaceAll("%player%", player.getName()).replaceAll("&","§");
@@ -72,7 +71,8 @@ public class PlayerJoin implements Listener {
         }
         String pname = save_data.getString(player.getDisplayName()+".player-name");
         if (Objects.equals(pname, player.getDisplayName())){
-            if(save_data.get(player.getDisplayName()+".leave") == "default"){
+            String leave_m = (String) save_data.get(player.getDisplayName()+".join");
+            if(Objects.equals(leave_m, "default")){
                 event.setQuitMessage(quit_msg);
             } else{
                 String enter_msg_datal = (String) save_data.get(player.getDisplayName()+".leave");
@@ -81,6 +81,5 @@ public class PlayerJoin implements Listener {
                 event.setQuitMessage(enter_msg_datal);
             }
         }
-        event.setQuitMessage(quit_msg);
     }
 }
