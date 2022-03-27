@@ -46,7 +46,7 @@ public class Metrics {
             config.addDefault("enabled", true);
             config.addDefault("serverUuid", UUID.randomUUID().toString());
             config.addDefault("logFailedRequests", false);
-            config.addDefault("logSentData", true);
+            config.addDefault("logSentData", false);
             config.addDefault("logResponseStatusText", false);
             // Inform the server owners about bStats
             config
@@ -67,7 +67,7 @@ public class Metrics {
         boolean enabled = config.getBoolean("enabled", true);
         String serverUUID = config.getString("serverUuid");
         boolean logErrors = config.getBoolean("logFailedRequests", false);
-        boolean logSentData = config.getBoolean("logSentData", true);
+        boolean logSentData = config.getBoolean("logSentData", false);
         boolean logResponseStatusText = config.getBoolean("logResponseStatusText", false);
         metricsBase =
                 new MetricsBase(
