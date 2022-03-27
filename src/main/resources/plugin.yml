@@ -8,6 +8,15 @@ commands:
   myjl:
     description: help command for MyJoinLeaveMessage plugin
     usage: /myjl
+  myjl help:
+    description: help command for MyJoinLeaveMessage plugin
+    usage: /myjl help
+  MyJoinLeaveMessage:
+    description: help command for MyJoinLeaveMessage plugin
+    usage: /MyJoinLeaveMessage
+  MyJoinLeaveMessage help:
+    description: help command for MyJoinLeaveMessage plugin
+    usage: /MyJoinLeaveMessage help
   myjoin:
     description: command to change your join message
     usage: /myjoin

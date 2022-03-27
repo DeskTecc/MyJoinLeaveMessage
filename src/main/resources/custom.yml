@@ -20,3 +20,6 @@ Leave: "%player% exited"
 #these messages will appear when you use /myjoin or /myleave like: Your join message: new join message
 Your-Join-Message: "Your join message"
 Your-Leave-Message: "Your leave message"
+#this option prevents players from not entering their nicknames like join message: joined!
+#if this option is true: <player> joined!
+On-Custom-Player: true
