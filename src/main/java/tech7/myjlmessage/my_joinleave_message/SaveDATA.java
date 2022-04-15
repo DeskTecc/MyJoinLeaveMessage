@@ -7,12 +7,12 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class Save_DATA {
+public class SaveDATA {
     private MyJoinLeaveMessage plugin;
     private FileConfiguration sdata = null;
     private File datafile = null;
 
-    public Save_DATA(MyJoinLeaveMessage plugin){
+    public SaveDATA(MyJoinLeaveMessage plugin){
         this.plugin = plugin;
         saveDefaultConfig();
     }

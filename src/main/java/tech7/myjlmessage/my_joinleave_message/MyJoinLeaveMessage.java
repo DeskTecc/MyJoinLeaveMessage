@@ -8,23 +8,25 @@ import java.util.Objects;
 
 public final class MyJoinLeaveMessage extends JavaPlugin {
 
-    public Custom data;
-    public Save_DATA save_data;
+    public CustomDATA data;
+    public SaveDATA save_data;
+    public BadwordsDATA badwords_data;
     @Override
     public void onEnable() {
         // Plugin startup logic
-        this.data = new Custom(this);
-        this.save_data = new Save_DATA(this);
+        Bukkit.getConsoleSender().sendMessage("[" + ChatColor.YELLOW + "MyJoin/LeaveMessage" + ChatColor.WHITE + "]" + ChatColor.GREEN + " Successful enabled");
+        this.data = new CustomDATA(this);
+        this.save_data = new SaveDATA(this);
+        this.badwords_data = new BadwordsDATA(this);
         int pluginId = 14357;
         Metrics metrics = new Metrics(this, pluginId);
-        Objects.requireNonNull(this.getCommand("myjl")).setExecutor(new Commands());
-        Objects.requireNonNull(this.getCommand("myjl help")).setExecutor(new Commands());
-        Objects.requireNonNull(this.getCommand("MyJoinLeaveMessage")).setExecutor(new Commands());
-        Objects.requireNonNull(this.getCommand("MyJoinLeaveMessage help")).setExecutor(new Commands());
-        Bukkit.getConsoleSender().sendMessage("[" + ChatColor.YELLOW + "MyJoin/LeaveMessage" + ChatColor.WHITE + "]" + ChatColor.GREEN + " Successful enabled");
-        Bukkit.getPluginManager().registerEvents(new PlayerJoin(), this);
-        Objects.requireNonNull(this.getCommand("myjoin")).setExecutor(new Command_Enter());
-        Objects.requireNonNull(this.getCommand("myleave")).setExecutor(new Command_Leave());
+        Objects.requireNonNull(this.getCommand("myjl")).setExecutor(new CommandHelp());
+        Objects.requireNonNull(this.getCommand("myjl help")).setExecutor(new CommandHelp());
+        Objects.requireNonNull(this.getCommand("MyJoinLeaveMessage")).setExecutor(new CommandHelp());
+        Objects.requireNonNull(this.getCommand("MyJoinLeaveMessage help")).setExecutor(new CommandHelp());
+        Bukkit.getPluginManager().registerEvents(new PlayerEvents(), this);
+        Objects.requireNonNull(this.getCommand("myjoin")).setExecutor(new CommandEnter());
+        Objects.requireNonNull(this.getCommand("myleave")).setExecutor(new CommandLeave());
     }
 
     @Override

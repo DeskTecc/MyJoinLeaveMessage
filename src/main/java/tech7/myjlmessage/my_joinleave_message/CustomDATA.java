@@ -9,12 +9,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 
-public class Custom {
+public class CustomDATA {
     private MyJoinLeaveMessage plugin;
     private FileConfiguration cust = null;
     private File custfile = null;
 
-    public Custom(MyJoinLeaveMessage plugin){
+    public CustomDATA(MyJoinLeaveMessage plugin){
         this.plugin = plugin;
         saveDefaultConfig();
     }

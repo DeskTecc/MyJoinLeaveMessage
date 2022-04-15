@@ -23,3 +23,4 @@ Your-Leave-Message: "Your leave message"
 #this option prevents players from not entering their nicknames like join message: joined!
 #if this option is true: <player> joined!
 On-Custom-Player: true
+Badwords: false

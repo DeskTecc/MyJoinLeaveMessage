@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 
-public class PlayerJoin implements Listener {
+public class PlayerEvents implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) throws IOException {

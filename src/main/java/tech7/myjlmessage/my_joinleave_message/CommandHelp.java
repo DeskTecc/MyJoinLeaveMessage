@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 
-public class Commands implements CommandExecutor, Listener {
+public class CommandHelp implements CommandExecutor, Listener {
 
 
     @Override

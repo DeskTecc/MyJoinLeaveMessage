@@ -6,7 +6,7 @@
 
     <groupId>tech7.myjlmessage</groupId>
     <artifactId>MyJoinLeaveMessage</artifactId>
-    <version>1.5</version>
+    <version>1.7</version>
     <packaging>jar</packaging>
 
     <name>MyJoinLeaveMessage</name>
@@ -70,6 +70,12 @@
             <artifactId>spigot-api</artifactId>
             <version>1.18.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
