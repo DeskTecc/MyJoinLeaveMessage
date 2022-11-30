@@ -59,19 +59,19 @@ public class PlayerEvents implements Listener {
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event){
         YamlConfiguration custom = YamlConfiguration.loadConfiguration(new File("plugins/MyJoinLeaveMessage/custom.yml"));
-        Player player = event.getPlayer();
-        String quit_msg = (String) custom.get("Leave");
-        assert quit_msg != null;
-        quit_msg = quit_msg.replaceAll("%player%", player.getName()).replaceAll("&","§");
         FileConfiguration save_data = new YamlConfiguration();
         try {
             save_data.load("plugins/MyJoinLeaveMessage/data.yml");
         } catch(IOException | InvalidConfigurationException e){
             e.printStackTrace();
         }
+        Player player = event.getPlayer();
+        String quit_msg = (String) custom.get("Leave");
+        assert quit_msg != null;
+        quit_msg = quit_msg.replaceAll("%player%", player.getName()).replaceAll("&","§");
         String pname = save_data.getString(player.getDisplayName()+".player-name");
         if (Objects.equals(pname, player.getDisplayName())){
-            String leave_m = (String) save_data.get(player.getDisplayName()+".join");
+            String leave_m = (String) save_data.get(player.getDisplayName()+".leave");
             if(Objects.equals(leave_m, "default")){
                 event.setQuitMessage(quit_msg);
             } else{
